@@ -12,6 +12,14 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-PMK12ZDCWG'); // Deine GA4 ID
+
+    // Router-Load Event schicken, sobald die Seite geladen ist
+    window.addEventListener('load', function() {
+      gtag('event', 'router_load', {
+        event_category: 'router',
+        event_label: 'crashkurs'
+      });
+    });
   </script>
 
   <style>
@@ -88,7 +96,7 @@
   <a
     class="button primary"
     href="https://m.me/229416091094064?ref=w47333678"
-    onclick="gtag('event', 'click_messenger', {event_category: 'router', event_label: 'crashkurs'});"
+    onclick="gtag('event', 'messenger_start', {event_category: 'router', event_label: 'crashkurs'});"
   >
     Crashkurs im Messenger starten
   </a>
@@ -98,7 +106,7 @@
     class="button secondary"
     href="https://ig.me/m/volumetraderchris"
     target="_blank"
-    onclick="gtag('event', 'click_instagram_dm', {event_category: 'router', event_label: 'crashkurs'});"
+    onclick="gtag('event', 'insta_dm', {event_category: 'router', event_label: 'crashkurs'});"
   >
     Crashkurs über Instagram-DM erhalten
   </a>
@@ -109,7 +117,7 @@
     <a
       href="https://instagram.com/volumetraderchris"
       target="_blank"
-      onclick="gtag('event', 'click_instagram_profile', {event_category: 'router', event_label: 'crashkurs'});"
+      onclick="gtag('event', 'insta_open', {event_category: 'router', event_label: 'crashkurs'});"
     >
       Mein Instagram-Profil öffnen
     </a>
@@ -123,6 +131,3 @@
 
 </body>
 </html>
-
-
-
