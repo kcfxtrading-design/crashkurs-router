@@ -47,30 +47,54 @@
       color: #fff;
     }
     a.button.secondary {
-      background: #e1306c; /* Instagram-Farbe */
+      background: #e1306c; /* Instagram Pink */
       color: #fff;
     }
-    small {
-      margin-top: 14px;
-      font-size: 13px;
-      color: #b0b0b0;
+    .backup {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #cccccc;
+    }
+    .backup a {
+      color: #e1306c;
+      font-weight: bold;
+      text-decoration: none;
     }
   </style>
 </head>
+
 <body>
   <h1>Volumetrading Crashkurs</h1>
+
   <p>
-    Wähle aus, wo du deinen Crashkurs bekommen möchtest.
-    Wenn dein Messenger spinnt oder nicht installiert ist, nutz einfach Instagram.
+    Wähle aus, wo du deinen Crashkurs erhalten möchtest.  
+    Wenn dein Messenger nicht funktioniert oder nicht installiert ist, nutze Instagram.
   </p>
+
   <div class="buttons">
-    <a class="button primary" href="https://m.me/229416091094064?ref=w47333678" target="_blank">
+
+    <!-- Messenger Crashkurs Button -->
+    <a class="button primary" 
+       href="https://m.me/229416091094064?ref=w47333678" 
+       target="_blank">
       Crashkurs im Messenger starten
     </a>
-    <a class="button secondary" href="https://ig.me/m/volumetraderchris" target="_blank">
-      Instagram DMs öffnen
+
+    <!-- Instagram App Deep Link -->
+    <a class="button secondary" 
+       href="instagram://user?username=volumetraderchris">
+      Instagram DMs öffnen (App)
+    </a>
+
+  </div>
+
+  <!-- Backup Link falls DeepLink blockiert wird -->
+  <div class="backup">
+    Falls die App nicht öffnet:  
+    <a href="https://instagram.com/_u/volumetraderchris" target="_blank">
+      Instagram öffnen
     </a>
   </div>
-  <small>Du kannst den Crashkurs jederzeit später nochmal anfordern.</small>
+
 </body>
 </html>
