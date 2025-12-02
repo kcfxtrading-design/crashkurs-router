@@ -3,98 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <title>Dein Volumetrading Crashkurs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    :root {
+      --bg: #050816;
+      --card-bg: #0b1020;
+      --text-main: #f9f9f9;
+      --text-muted: #b4b4b4;
+      --accent-yellow: #ffdf7e;
+      --btn-messenger: #1877f2;
+      --btn-instagram: #e1306c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #050816;
-      color: #f9f9f9;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #151a33 0, #050816 55%);
+      color: var(--text-main);
+      min-height: 100vh;
+      margin: 0;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
+      padding: 16px;
     }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 16px;
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 28px 22px 24px;
       max-width: 420px;
-      margin-bottom: 24px;
-      line-height: 1.4;
+      width: 100%;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.04);
     }
+
+    h1 {
+      font-size: 24px;
+      margin: 0 0 10px;
+      letter-spacing: 0.03em;
+    }
+
+    p.subtitle {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin: 0 0 22px;
+    }
+
     .buttons {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       width: 100%;
-      max-width: 320px;
+      margin-bottom: 14px;
     }
+
     a.button {
       display: inline-block;
-      padding: 14px 22px;
-      font-size: 17px;
-      font-weight: bold;
+      padding: 13px 18px;
+      font-size: 15px;
+      font-weight: 600;
       text-decoration: none;
       border-radius: 999px;
       border: none;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
     }
+
     a.button.primary {
-      background: #1877f2; /* Messenger-Blau */
+      background: var(--btn-messenger);
       color: #fff;
     }
+
     a.button.secondary {
-      background: #e1306c; /* Instagram Pink */
+      background: var(--btn-instagram);
       color: #fff;
     }
-    .backup {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #cccccc;
+
+    a.button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
     }
+
+    a.button:active {
+      transform: translateY(0);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    .push {
+      margin-top: 6px;
+      font-size: 14px;
+      color: var(--accent-yellow);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .backup {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
     .backup a {
-      color: #e1306c;
-      font-weight: bold;
+      color: var(--btn-instagram);
+      font-weight: 600;
       text-decoration: none;
+    }
+
+    .backup a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 24px 18px 20px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      p.subtitle {
+        font-size: 13px;
+      }
+      a.button {
+        font-size: 14px;
+      }
+      .push {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <h1>Volumetrading Crashkurs</h1>
+  <div class="card">
+    <h1>Volumetrading Crashkurs</h1>
 
-  <p>
-    Wähle aus, wo du deinen Crashkurs erhalten möchtest.  
-    Wenn dein Messenger nicht funktioniert oder nicht installiert ist, nutze Instagram.
-  </p>
+    <p class="subtitle">
+      Wähle aus, wo du deinen Crashkurs erhalten möchtest. <br />
+      Wenn dein Messenger nicht funktioniert oder nicht installiert ist,
+      nutze Instagram.
+    </p>
 
-  <div class="buttons">
+    <div class="buttons">
+      <!-- Messenger -->
+      <a
+        class="button primary"
+        href="https://m.me/229416091094064?ref=w47333678"
+        target="_blank"
+      >
+        Crashkurs im Messenger starten
+      </a>
 
-    <!-- Messenger Crashkurs Button -->
-    <a class="button primary" 
-       href="https://m.me/229416091094064?ref=w47333678" 
-       target="_blank">
-      Crashkurs im Messenger starten
-    </a>
+      <!-- Instagram App Deep Link -->
+      <a
+        class="button secondary"
+        href="instagram://user?username=volumetraderchris"
+      >
+        Instagram DMs öffnen (App)
+      </a>
+    </div>
 
-    <!-- Instagram App Deep Link -->
-    <a class="button secondary" 
-       href="instagram://user?username=volumetraderchris">
-      Instagram DMs öffnen (App)
-    </a>
+    <!-- Starker Conversion-Push -->
+    <div class="push">
+      ⚠️ Ohne Klick auf eine der beiden Optionen kann ich dir den Crashkurs nicht
+      schicken. Bitte jetzt auswählen.
+    </div>
 
+    <!-- Backup-Link fürs Profil (Browser / kein App-Deep-Link) -->
+    <div class="backup">
+      Falls du kein Instagram installiert hast oder die App nicht öffnet:<br />
+      <a href="https://instagram.com/volumetraderchris" target="_blank">
+        Profil auf Instagram öffnen
+      </a>
+      und mir dort eine kurze DM schreiben.
+    </div>
   </div>
-
-  <!-- Backup Link falls DeepLink blockiert wird -->
-  <div class="backup">
-    Falls die App nicht öffnet:  
-    <a href="https://instagram.com/_u/volumetraderchris" target="_blank">
-      Instagram öffnen
-    </a>
-  </div>
-
 </body>
 </html>
+
