@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Crashkurs wird geöffnet…</title>
+  <title>Dein Volumetrading Crashkurs</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,50 +17,60 @@
       text-align: center;
     }
     h1 {
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 10px;
     }
     p {
       font-size: 16px;
-      max-width: 360px;
-      margin-bottom: 20px;
+      max-width: 420px;
+      margin-bottom: 24px;
+      line-height: 1.4;
     }
-    #fallback {
-      display: none;
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 320px;
     }
     a.button {
       display: inline-block;
-      padding: 12px 22px;
-      font-size: 18px;
+      padding: 14px 22px;
+      font-size: 17px;
       font-weight: bold;
       text-decoration: none;
       border-radius: 999px;
-      background: #e1306c;
+      border: none;
+    }
+    a.button.primary {
+      background: #1877f2; /* Messenger-Blau */
       color: #fff;
     }
+    a.button.secondary {
+      background: #e1306c; /* Instagram-Farbe */
+      color: #fff;
+    }
+    small {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #b0b0b0;
+    }
   </style>
-  <script>
-    window.onload = function() {
-      // 1. Versuch: Deinen ManyChat / Messenger-Crashkurs-Flow öffnen
-      window.location.href = "https://m.me/229416091094064?ref=w47333678";
-
-      // 2. Fallback nach 1,5 Sekunden anzeigen
-      setTimeout(function() {
-        document.getElementById("fallback").style.display = "block";
-      }, 1500);
-    };
-  </script>
 </head>
 <body>
-  <h1>Crashkurs wird geöffnet…</h1>
-  <div id="fallback">
-    <p>
-      Wenn sich der Messenger nicht automatisch öffnet oder irgendwas hängt,
-      klick hier und schreib mir kurz auf Instagram. Ich schicke dir den Crashkurs direkt in die DMs.
-    </p>
-    <a class="button" href="https://ig.me/m/volumetraderchris" target="_blank">
+  <h1>Volumetrading Crashkurs</h1>
+  <p>
+    Wähle aus, wo du deinen Crashkurs bekommen möchtest.
+    Wenn dein Messenger spinnt oder nicht installiert ist, nutz einfach Instagram.
+  </p>
+  <div class="buttons">
+    <a class="button primary" href="https://m.me/229416091094064?ref=w47333678" target="_blank">
+      Crashkurs im Messenger starten
+    </a>
+    <a class="button secondary" href="https://ig.me/m/volumetraderchris" target="_blank">
       Instagram DMs öffnen
     </a>
   </div>
+  <small>Du kannst den Crashkurs jederzeit später nochmal anfordern.</small>
 </body>
 </html>
