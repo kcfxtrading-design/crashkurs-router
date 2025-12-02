@@ -1,9 +1,66 @@
-index.html
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-<meta http-equiv="refresh" content="0; URL='https://mc.manychat.com/YOUR-SMARTLINK-HERE'" />
+  <meta charset="UTF-8" />
+  <title>Crashkurs wird geöffnet…</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #050816;
+      color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+      max-width: 360px;
+      margin-bottom: 20px;
+    }
+    #fallback {
+      display: none;
+    }
+    a.button {
+      display: inline-block;
+      padding: 12px 22px;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 999px;
+      background: #e1306c;
+      color: #fff;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      // 1. Versuch: Deinen ManyChat / Messenger-Crashkurs-Flow öffnen
+      window.location.href = "https://m.me/229416091094064?ref=w47333678";
+
+      // 2. Fallback nach 1,5 Sekunden anzeigen
+      setTimeout(function() {
+        document.getElementById("fallback").style.display = "block";
+      }, 1500);
+    };
+  </script>
 </head>
 <body>
+  <h1>Crashkurs wird geöffnet…</h1>
+  <div id="fallback">
+    <p>
+      Wenn sich der Messenger nicht automatisch öffnet oder irgendwas hängt,
+      klick hier und schreib mir kurz auf Instagram. Ich schicke dir den Crashkurs direkt in die DMs.
+    </p>
+    <a class="button" href="https://ig.me/m/volumetraderchris" target="_blank">
+      Instagram DMs öffnen
+    </a>
+  </div>
 </body>
 </html>
