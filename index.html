@@ -11,9 +11,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-PMK12ZDCWG'); // Deine GA4 ID
+    gtag('config', 'G-PMK12ZDCWG');
 
-    // Router-Load Event schicken, sobald die Seite geladen ist
     window.addEventListener('load', function() {
       gtag('event', 'router_load', {
         event_category: 'router',
@@ -23,111 +22,327 @@
   </script>
 
   <style>
+    :root {
+      --bg: #020617;
+      --bg-card: #020817;
+      --accent: #0ea5e9;
+      --accent-soft: rgba(14,165,233,0.12);
+      --accent-strong: #e11d48;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148,163,184,0.35);
+      --shadow-soft: 0 18px 45px rgba(15,23,42,0.9);
+      --radius-xl: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #0d1117;
-      color: #e6edf3;
       margin: 0;
-      text-align: center;
-      padding: 40px;
+      min-height: 100vh;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at top, rgba(56,189,248,0.18), transparent 55%),
+        radial-gradient(circle at bottom, rgba(236,72,153,0.18), transparent 55%),
+        var(--bg);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: linear-gradient(145deg, rgba(15,23,42,0.96), rgba(15,23,42,0.88));
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-subtle);
+      padding: 24px 22px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% -10%, rgba(56,189,248,0.11), transparent 55%),
+        radial-gradient(circle at 110% 110%, rgba(236,72,153,0.11), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.55);
+      color: #e5e7eb;
+      margin-bottom: 12px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34,197,94,0.75);
     }
 
     h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
+      font-size: 22px;
+      margin: 0 0 6px;
+      letter-spacing: 0.01em;
     }
 
-    p {
-      font-size: 15px;
-      opacity: 0.85;
-      line-height: 1.5;
-      margin-bottom: 30px;
+    .subline {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .choice-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #6b7280;
+      margin-bottom: 10px;
+      font-weight: 600;
     }
 
     .button {
-      display: block;
-      width: 280px;
-      margin: 12px auto;
-      padding: 15px;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      border-radius: 999px;
+      padding: 13px 16px;
+      margin-bottom: 10px;
       text-decoration: none;
-      color: white;
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition:
+        transform 0.12s ease-out,
+        box-shadow 0.12s ease-out,
+        border-color 0.12s ease-out,
+        background 0.12s ease-out,
+        opacity 0.12s ease-out;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .primary {
-      background: #0078ff;
+    .button span {
+      pointer-events: none;
     }
 
-    .secondary {
-      background: #e0006f;
+    .button-main {
+      font-size: 14px;
+      font-weight: 600;
+      color: #f9fafb;
+      text-align: left;
+    }
+
+    .button-sub {
+      font-size: 11px;
+      color: #d1d5db;
+      opacity: 0.9;
+      text-align: left;
+    }
+
+    .button-icon {
+      font-size: 17px;
+      flex-shrink: 0;
+      opacity: 0.95;
+    }
+
+    .button-chevron {
+      font-size: 13px;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    .button.primary {
+      background: radial-gradient(circle at 0% 0%, #38bdf8, #0ea5e9);
+      box-shadow: 0 18px 40px rgba(56,189,248,0.45);
+    }
+
+    .button.secondary {
+      background: linear-gradient(135deg, #ec4899, #e11d48);
+      box-shadow: 0 16px 34px rgba(236,72,153,0.48);
+    }
+
+    .button:focus-visible {
+      outline: 2px solid #e5e7eb;
+      outline-offset: 3px;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 55px rgba(15,23,42,0.9);
+      opacity: 0.98;
+    }
+
+    .button:active {
+      transform: translateY(0);
+      box-shadow: 0 10px 25px rgba(15,23,42,0.9);
+      opacity: 0.94;
+    }
+
+    .hint {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 55%);
+      border: 1px solid rgba(148,163,184,0.5);
+      font-size: 11px;
+      color: #d1d5db;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .hint strong {
+      color: #e5e7eb;
+      font-weight: 600;
     }
 
     .backup {
-      margin-top: 18px;
-      opacity: 0.7;
-      font-size: 13px;
+      margin-top: 12px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: left;
     }
 
     .backup a {
-      color: #ff4d9e;
+      color: #f472b6;
       text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
     }
 
     .cta-friendly {
-      margin-top: 25px;
-      font-size: 14px;
-      color: #aad8ff;
-      font-weight: bold;
+      margin-top: 10px;
+      font-size: 11px;
+      color: #a5b4fc;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cta-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34,197,94,0.7);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 20px 16px 18px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .button {
+        padding: 12px 14px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Volumetrading Crashkurs</h1>
+  <main class="card" role="main">
+    <div class="card-inner">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>Direkter Zugang&nbsp;•&nbsp;Ohne Umwege</span>
+      </div>
 
-  <p>
-    Wähle aus, wie du deinen Crashkurs am liebsten erhalten möchtest.<br>
-    Falls dein Messenger nicht funktioniert oder nicht installiert ist, kannst du ihn jederzeit über Instagram bekommen.
-  </p>
+      <h1>Volumetrading Crashkurs</h1>
+      <p class="subline">
+        Wähle aus, wie du deinen Zugang erhalten möchtest.  
+        Der Link öffnet direkt deine App – ohne extra Formular oder E-Mail.
+      </p>
 
-  <!-- Messenger Button -->
-  <a
-    class="button primary"
-    href="https://m.me/229416091094064?ref=w47333678"
-    onclick="gtag('event', 'messenger_start', {event_category: 'router', event_label: 'crashkurs'});"
-  >
-    Crashkurs im Messenger starten
-  </a>
+      <div class="choice-label">Bevorzugter Messenger</div>
 
-  <!-- Instagram DM Button -->
-  <a
-    class="button secondary"
-    href="https://ig.me/m/volumetraderchris"
-    target="_blank"
-    onclick="gtag('event', 'insta_dm', {event_category: 'router', event_label: 'crashkurs'});"
-  >
-    Crashkurs über Instagram-DM erhalten
-  </a>
+      <!-- Messenger Button -->
+      <a
+        class="button primary"
+        href="https://m.me/229416091094064?ref=w47333678"
+        onclick="gtag('event', 'messenger_start', {event_category: 'router', event_label: 'crashkurs'});"
+      >
+        <span class="button-icon">💬</span>
+        <span>
+          <span class="button-main">Crashkurs im Messenger starten</span><br />
+          <span class="button-sub">Empfohlen, wenn du Facebook / Messenger nutzt</span>
+        </span>
+        <span class="button-chevron">➜</span>
+      </a>
 
-  <!-- Backup Link -->
-  <div class="backup">
-    Falls die App nicht automatisch öffnet:<br>
-    <a
-      href="https://instagram.com/volumetraderchris"
-      target="_blank"
-      onclick="gtag('event', 'insta_open', {event_category: 'router', event_label: 'crashkurs'});"
-    >
-      Mein Instagram-Profil öffnen
-    </a>
-    und mir kurz „Crashkurs“ schreiben. 😊
-  </div>
+      <!-- Instagram DM Button -->
+      <a
+        class="button secondary"
+        href="https://ig.me/m/volumetraderchris"
+        target="_blank"
+        onclick="gtag('event', 'insta_dm', {event_category: 'router', event_label: 'crashkurs'});"
+      >
+        <span class="button-icon">📲</span>
+        <span>
+          <span class="button-main">Crashkurs über Instagram-DM erhalten</span><br />
+          <span class="button-sub">Ideal, wenn du lieber auf Instagram schreibst</span>
+        </span>
+        <span class="button-chevron">➜</span>
+      </a>
 
-  <!-- Freundliche CTA -->
-  <div class="cta-friendly">
-    Dein Zugang wird direkt nach dem Klick versendet. 🚀
-  </div>
+      <div class="hint">
+        <strong>Hinweis:</strong> Sollte sich keine App öffnen, kannst du den Crashkurs jederzeit
+        direkt über Instagram anfordern.
+      </div>
+
+      <div class="backup">
+        Falls die App nicht automatisch öffnet:<br />
+        <a
+          href="https://instagram.com/volumetraderchris"
+          target="_blank"
+          onclick="gtag('event', 'insta_open', {event_category: 'router', event_label: 'crashkurs'});"
+        >
+          Instagram-Profil <strong>@volumetraderchris</strong> öffnen
+        </a>
+        und einfach „Crashkurs“ schreiben. 😊
+      </div>
+
+      <div class="cta-friendly">
+        <span class="cta-dot"></span>
+        <span>Dein Zugang wird direkt nach dem Klick versendet. 🚀</span>
+      </div>
+    </div>
+  </main>
 
 </body>
 </html>
