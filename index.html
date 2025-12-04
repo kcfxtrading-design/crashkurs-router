@@ -259,6 +259,77 @@
       flex-shrink: 0;
     }
 
+    /* Crashkurs-Content Block */
+    .course-section {
+      margin-top: 18px;
+      padding: 12px 12px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(148,163,184,0.55);
+      background: radial-gradient(circle at 0 0, rgba(15,23,42,0.9), rgba(15,23,42,0.8));
+    }
+
+    .course-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .course-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+      font-weight: 600;
+    }
+
+    .course-tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(14,165,233,0.16);
+      border: 1px solid rgba(56,189,248,0.5);
+      color: #e0f2fe;
+      font-weight: 500;
+    }
+
+    .course-list {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 2px;
+    }
+
+    .course-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 11px;
+      color: #d1d5db;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .course-bullet {
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      margin-top: 1px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      background: rgba(56,189,248,0.18);
+      border: 1px solid rgba(56,189,248,0.6);
+      color: #e0f2fe;
+    }
+
+    .course-note {
+      margin-top: 4px;
+      font-size: 10px;
+      color: #9ca3af;
+    }
+
     @media (max-width: 480px) {
       .card {
         padding: 20px 16px 18px;
@@ -319,6 +390,43 @@
         </span>
         <span class="button-chevron">➜</span>
       </a>
+
+      <!-- Crashkurs Inhalt -->
+      <section class="course-section" aria-label="Inhalt des Crashkurses">
+        <div class="course-header">
+          <div class="course-title">Das bekommst du im Crashkurs</div>
+          <div class="course-tag">Kompletter Kurs · 100% gratis</div>
+        </div>
+        <ul class="course-list">
+          <li>
+            <div class="course-bullet">1</div>
+            <div>Grundlagen von Volumenprofil &amp; Footprint – warum 99% der Retail-Trader den Markt falsch lesen.</div>
+          </li>
+          <li>
+            <div class="course-bullet">2</div>
+            <div>Liquidity &amp; Stop-Hunting: Wie Big Player Stops einsammeln und wo du NICHT einsteigen darfst.</div>
+          </li>
+          <li>
+            <div class="course-bullet">3</div>
+            <div>Big-Player-Strategie: Wie du ihre Spuren im Orderflow erkennst (inkl. klarer Setups).</div>
+          </li>
+          <li>
+            <div class="course-bullet">4</div>
+            <div>Entry &amp; Exit Beispiele – konkrete Szenarien mit „3 Min vor Opening“ Trades.</div>
+          </li>
+          <li>
+            <div class="course-bullet">5</div>
+            <div>Live-Marktanalyse &amp; Umsetzung: Wie du das Ganze in deinem eigenen Trading anwendest.</div>
+          </li>
+          <li>
+            <div class="course-bullet">★</div>
+            <div>Bonus: PDF-Setup &amp; Watchlist zum Nachschauen.</div>
+          </li>
+        </ul>
+        <div class="course-note">
+          Der komplette Kurs wird als strukturierte Nachrichten-Serie im Messenger / in Instagram-DMs ausgeliefert – kein Spam, nur Inhalte.
+        </div>
+      </section>
 
       <div class="hint">
         <strong>Hinweis:</strong> Sollte sich keine App öffnen, kannst du den Crashkurs jederzeit
