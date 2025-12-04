@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
@@ -259,6 +259,77 @@
       flex-shrink: 0;
     }
 
+    /* Crashkurs-Content Block */
+    .course-section {
+      margin-top: 18px;
+      padding: 12px 12px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(148,163,184,0.55);
+      background: radial-gradient(circle at 0 0, rgba(15,23,42,0.9), rgba(15,23,42,0.8));
+    }
+
+    .course-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .course-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+      font-weight: 600;
+    }
+
+    .course-tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(14,165,233,0.16);
+      border: 1px solid rgba(56,189,248,0.5);
+      color: #e0f2fe;
+      font-weight: 500;
+    }
+
+    .course-list {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 2px;
+    }
+
+    .course-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 11px;
+      color: #d1d5db;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .course-bullet {
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      margin-top: 1px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      background: rgba(56,189,248,0.18);
+      border: 1px solid rgba(56,189,248,0.6);
+      color: #e0f2fe;
+    }
+
+    .course-note {
+      margin-top: 4px;
+      font-size: 10px;
+      color: #9ca3af;
+    }
+
     @media (max-width: 480px) {
       .card {
         padding: 20px 16px 18px;
@@ -319,6 +390,66 @@
         </span>
         <span class="button-chevron">➜</span>
       </a>
+
+      <!-- Crashkurs Inhalt -->
+      <section class="course-section" aria-label="Inhalt des Crashkurses">
+        <div class="course-header">
+          <div class="course-title">Das bekommst du im Crashkurs</div>
+          <div class="course-tag">Videokurs · 8 Module · 100% gratis</div>
+        </div>
+
+        <p style="font-size:11.5px; color:#e2e8f0; margin-bottom:10px; line-height:1.45;">
+          <strong>Lerne den Markt wirklich zu lesen – Schritt für Schritt, verständlich erklärt.</strong>
+        </p>
+
+        <ul class="course-list">
+          <li>
+            <div class="course-bullet">1</div>
+            Was Volumentrading wirklich ist – klar und verständlich erklärt.
+          </li>
+          <li>
+            <div class="course-bullet">2</div>
+            Wie man Volumen richtig anwendet und wann es überhaupt Sinn macht.
+          </li>
+          <li>
+            <div class="course-bullet">3</div>
+            Software &amp; Datenfeed Setup + <strong>ATAS kostenlos starten</strong>.
+          </li>
+          <li>
+            <div class="course-bullet">4</div>
+            Footprint Basics <strong>inkl. fertigem Template zum Direkt-Import</strong>.
+          </li>
+          <li>
+            <div class="course-bullet">5</div>
+            Wie man im Footprint einen Trade erkennt &amp; klare Entscheidungszonen definiert.
+          </li>
+          <li>
+            <div class="course-bullet">6</div>
+            Volume Profile Basics <strong>inkl. Vorlage zum sofortigen Nutzen</strong>.
+          </li>
+          <li>
+            <div class="course-bullet">7</div>
+            Entries &amp; Zielzonen bestimmen mit Volumenprofil in der Praxis.
+          </li>
+          <li>
+            <div class="course-bullet">8</div>
+            Market Profile Grundlagen – Markt lesen wie Profis.
+          </li>
+          <li>
+            <div class="course-bullet">★</div>
+            Kombination: Footprint + Volume + Market Profile zusammen anwenden.
+          </li>
+          <li>
+            <div class="course-bullet">→</div>
+            <strong>Abschluss:</strong> vollständiger Trade von Setup bis Exit erklärt.
+          </li>
+        </ul>
+
+        <div class="course-note">
+          <strong>8 Videolektionen</strong> – kompakt, klar strukturiert & direkt anwendbar.<br>
+          <strong>Templates sind enthalten</strong> – kein Nachbauen nötig.
+        </div>
+      </section>
 
       <div class="hint">
         <strong>Hinweis:</strong> Sollte sich keine App öffnen, kannst du den Crashkurs jederzeit
