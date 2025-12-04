@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
@@ -33,20 +33,6 @@
       --border-subtle: rgba(148,163,184,0.35);
       --shadow-soft: 0 18px 45px rgba(15,23,42,0.9);
       --radius-xl: 18px;
-      body {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 32px 0;
-}
-
-/* Card in der Bildschirmmitte zentrieren */
-.card {
-  margin-left: auto;
-  margin-right: auto;
-}
-
     }
 
     * {
@@ -66,6 +52,8 @@
         var(--bg);
       color: var(--text-main);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 100%;
+      overflow-x: hidden;
     }
 
     .card {
@@ -78,6 +66,8 @@
       padding: 24px 22px 20px;
       position: relative;
       overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .card::before {
@@ -321,6 +311,28 @@
       color: #d1d5db;
       margin-bottom: 4px;
       line-height: 1.4;
+      opacity: 0;
+      transform: translateY(4px);
+      animation: fadeUp 0.45s ease-out forwards;
+    }
+
+    /* leichte, gestaffelte Animation für Bulletpoints */
+    .course-list li:nth-child(1) { animation-delay: 0.05s; }
+    .course-list li:nth-child(2) { animation-delay: 0.09s; }
+    .course-list li:nth-child(3) { animation-delay: 0.13s; }
+    .course-list li:nth-child(4) { animation-delay: 0.17s; }
+    .course-list li:nth-child(5) { animation-delay: 0.21s; }
+    .course-list li:nth-child(6) { animation-delay: 0.25s; }
+    .course-list li:nth-child(7) { animation-delay: 0.29s; }
+    .course-list li:nth-child(8) { animation-delay: 0.33s; }
+    .course-list li:nth-child(9) { animation-delay: 0.37s; }
+    .course-list li:nth-child(10){ animation-delay: 0.41s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .course-bullet {
