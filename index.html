@@ -1,14 +1,393 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=https://m.me/229416091094064?ref=w47333678">
-<title>Weiterleitung...</title>
-<script>
-  var redirectURL = "https://m.me/229416091094064?ref=w47333678";
-  window.location.replace(redirectURL);
-</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kostenloser Strategie-Call | Struktur statt Raten</title>
+  <meta name="description" content="Kostenloser Strategie-Call: Wir prüfen dein Setup, deine Struktur und die nächsten Schritte – ohne Hype, ohne Versprechen." />
+  <style>
+    :root{
+      --bg:#070A12;
+      --card:#0D1224;
+      --muted:#A8B0C5;
+      --text:#E9EEFF;
+      --line:rgba(255,255,255,.10);
+      --accent:#44D2FF;
+      --accent2:#A855F7;
+      --ok:#22C55E;
+      --warn:#F59E0B;
+      --shadow:0 24px 70px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(1200px 800px at 20% 0%, rgba(68,210,255,.18), transparent 55%),
+                  radial-gradient(900px 600px at 80% 10%, rgba(168,85,247,.16), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.35;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logo{
+      width:36px;height:36px;border-radius:12px;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow: 0 12px 32px rgba(68,210,255,.18);
+    }
+    .brand b{letter-spacing:.3px}
+    .pill{border:1px solid var(--line);padding:10px 14px;border-radius:999px;color:var(--muted);text-decoration:none}
+
+    .hero{padding:46px 0 20px;display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
+    @media (max-width: 920px){.hero{grid-template-columns:1fr;}}
+
+    .h-card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.05), transparent 40%), var(--card);
+      border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);}
+    h1{margin:0 0 10px;font-size:42px;letter-spacing:-.5px;line-height:1.05}
+    @media (max-width:520px){h1{font-size:34px;}}
+    .sub{color:var(--muted);font-size:16px;margin:0 0 18px}
+
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+    .badge{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.03);padding:10px 12px;border-radius:999px;color:var(--muted);font-size:13px}
+    .dot{width:9px;height:9px;border-radius:999px;background:var(--ok)}
+    .dot.warn{background:var(--warn)}
+
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    .btn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      padding:12px 16px;
+      border-radius:14px;
+      text-decoration:none;
+      display:inline-flex;align-items:center;gap:10px;
+      cursor:pointer;
+    }
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, rgba(68,210,255,.95), rgba(168,85,247,.92));
+      box-shadow: 0 16px 40px rgba(68,210,255,.16);
+      color:#06101a;
+      font-weight:700;
+    }
+    .btn.primary:hover{filter:brightness(1.03)}
+
+    /* Highlight when jumped to call */
+    .formCard:target{
+      outline:2px solid rgba(68,210,255,.6);
+      box-shadow:0 0 0 6px rgba(68,210,255,.15);
+    }
+    .btn.primary:hover{filter:brightness(1.03)}
+    .btn:hover{border-color:rgba(255,255,255,.18)}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    @media (max-width: 920px){.grid3{grid-template-columns:1fr;}}
+    .mini{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:16px;padding:14px}
+    .mini b{display:block;margin-bottom:6px}
+    .mini p{margin:0;color:var(--muted);font-size:13px}
+
+    .formCard{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:var(--radius);padding:18px;position:sticky;top:18px}
+    @media (max-width: 920px){.formCard{position:relative;top:auto}}
+    .formCard h2{margin:4px 0 8px;font-size:18px}
+    .formCard p{margin:0 0 12px;color:var(--muted);font-size:13px}
+
+    label{display:block;font-size:12px;color:var(--muted);margin:10px 0 6px}
+    input, select, textarea{
+      width:100%;
+      background: rgba(0,0,0,.22);
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.12);
+      padding:11px 12px;
+      border-radius:14px;
+      outline:none;
+    }
+    textarea{min-height:92px;resize:vertical}
+    input:focus, select:focus, textarea:focus{border-color:rgba(68,210,255,.45)}
+
+    .note{font-size:12px;color:var(--muted);margin-top:10px}
+    .note b{color:#D9E6FF}
+
+    .section{padding:26px 0}
+    .secTitle{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
+    .secTitle h3{margin:0;font-size:20px}
+    .secTitle span{color:var(--muted);font-size:13px}
+
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width: 920px){.cols{grid-template-columns:1fr;}}
+
+    .card{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:18px;padding:18px}
+    .card h4{margin:0 0 8px;font-size:16px}
+    .card p, .card li{color:var(--muted);font-size:14px}
+    ul{margin:10px 0 0 18px}
+    ul li{margin:8px 0;line-height:1.35}
+
+    .faq details{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:16px;padding:14px;margin-bottom:10px}
+    .faq summary{cursor:pointer;font-weight:650}
+    .footer{padding:24px 0 44px;color:var(--muted);font-size:12px}
+
+    .splitLine{height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);margin:12px 0}
+
+    .tagline{color:rgba(233,238,255,.85);font-size:13px}
+  </style>
 </head>
 <body>
+  <!-- WICHTIG: Lege die Bilddatei als christoph.jpg im gleichen Ordner wie diese HTML-Datei ab -->
+<div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Start">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <b>KC FX Trading</b>
+          <div class="tagline">Struktur statt Raten</div>
+        </div>
+      </a>
+      <a class="pill" href="#qualify">Zum Call</a>
+    </div>
+
+    <section class="hero" id="top">
+      <div class="h-card">
+        <h1>Kostenloser Strategie‑Call<br/>für strukturiertes Volumentrading</h1>
+        <p class="sub">Wir prüfen in 15–20 Minuten, ob du ein klares Setup + Prozess hast (oder was als nächstes fehlt). Kein Hype, keine Versprechen – nur Struktur.</p>
+
+        <div class="badges">
+          <div class="badge"><span class="dot"></span> Fokus: Footprint · Volume Profile · Marktstruktur</div>
+          <div class="badge"><span class="dot"></span> Für Einsteiger & Prop‑Aspirants (seriös)</div>
+          <div class="badge"><span class="dot warn"></span> Nicht für „schnell reich“</div>
+        </div>
+
+        <p class="note" style="margin-top:6px">Im Call sprechen wir u. a. über: geeignete Märkte · Einstieg mit Volumen/Footprint · sinnvolle Einsteiger‑Strategie · notwendige Tools · realistisches Kapital & Risiko · Prop‑Firm‑Evaluations.</p>
+
+
+        <div class="ctaRow" style="margin-bottom:16px">
+          <a class="btn primary" href="#qualify">Kostenlosen Call anfragen</a>
+          <a class="btn" href="#proof">Warum ich?</a>
+          <a class="btn" href="#faq">FAQ</a>
+        </div>
+
+        <!-- Inline sections to avoid empty space next to the sticky card -->
+        <div class="cols" style="margin-top:16px" id="proof">
+          <div class="card">
+            <h4>Warum ich?</h4>
+            <ul>
+              <li><b>Daytrader seit 2013</b> – Fokus auf strukturierte Entscheidungsprozesse</li>
+              <li><b>10+ Jahre</b> Volumen-/Orderflow‑Trading (Footprint & Volume Profile)</li>
+              <li><b>1.000+ Trader</b> begleitet (Einsteiger bis Prop‑Aspirants)</li>
+              <li><b>Dutzende</b> in Prop‑Firm‑Strukturen positioniert</li>
+              <li><b>Trading‑Wettbewerbe:</b> erfolgreiche Teilnahmen an mehreren Wettbewerben</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Was wir im Call klären</h4>
+            <ul>
+              <li><b>Märkte & Instrumente:</b> was sinnvoll ist – und womit du <u>nicht</u> startest</li>
+              <li><b>Volumen & Footprint:</b> sauberer Einstieg ohne Indikator‑Overkill</li>
+              <li><b>Einsteiger‑Strategie:</b> einfache, testbare Struktur statt Chaos</li>
+              <li><b>Tools & Setup:</b> was du wirklich brauchst (und was nicht)</li>
+              <li><b>Kapital & Risiko:</b> realistische Größen & typische Denkfehler</li>
+              <li><b>Prop‑Firm‑Evaluations:</b> Ablauf, Regeln & häufige Fehler</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px" id="faq">
+          <h4>FAQ</h4>
+          <div class="faq" style="margin-top:10px">
+            <details>
+              <summary>Ist der Call wirklich kostenlos?</summary>
+              <p>Ja. Du bekommst eine klare Diagnose und nächste Schritte. Keine Signale, kein Druck.</p>
+            </details>
+            <details>
+              <summary>Versuchst du mir ein teures Coaching zu verkaufen?</summary>
+              <p>Nein. Kein Coaching‑Pitch, kein „Mehrere‑Tausend‑Euro“-Gespräch. Wenn du nur eine Frage hast: WhatsApp reicht.</p>
+            </details>
+            <details>
+              <summary>Gibst du Anlageberatung oder Gewinnversprechen?</summary>
+              <p>Nein. Keine Anlageberatung, keine Gewinngarantie. Bildung/Analyse & Struktur.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <aside class="formCard" id="qualify">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+          <img id="profilePreview" alt="Christoph Krämer – Daytrader" style="width:140px;height:140px;border-radius:20px;object-fit:cover;border:1px solid rgba(255,255,255,.18);display:none" />
+          <div id="profileFallback" style="width:140px;height:140px;border-radius:20px;border:1px dashed rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted)">Bild wählen</div>
+          <div>
+            <div style="font-weight:700">Christoph Krämer</div>
+            <div style="font-size:12px;color:var(--muted)">Daytrader seit 2013 · Volumen & Orderflow</div>
+            <label style="display:block;margin-top:6px;font-size:11px;color:var(--muted)">Profilbild auswählen</label>
+            <input id="profileInput" type="file" accept="image/*" style="font-size:12px" />
+          </div>
+        </div>
+        <h2>Direkt zu Christoph</h2>
+        <p>Kein Funnel-Quatsch: Du kannst mir sofort auf WhatsApp schreiben. Darunter findest du den Crashkurs und Instagram. Optional kannst du mir auch eine Terminanfrage per E‑Mail senden.</p>
+
+        <div style="display:flex;flex-direction:column;gap:10px;margin:10px 0 12px">
+          <a class="btn primary" style="width:100%;justify-content:center" id="waBtn" href="#">✅ Jetzt direkt mit Christoph schreiben (WhatsApp)</a>
+        <div class="note" style="margin-top:6px;text-align:center">Kein Verkauf · Kein Coaching‑Pitch · Kein Zeitdruck</div>
+          <a class="btn" style="width:100%;justify-content:center" href="https://m.me/229416091094064?ref=w47333678" target="_blank" rel="noopener">🎁 Kostenloser Crashkurs (Messenger)</a>
+          <a class="btn" style="width:100%;justify-content:center" href="https://www.instagram.com/volumetraderchris/" target="_blank" rel="noopener">📷 Instagram: @volumetraderchris</a>
+        </div>
+
+        <div class="splitLine"></div>
+
+        <div class="note">
+          <b>Wichtig:</b> Kein Verkaufsgespräch. Es wird zu keinem Zeitpunkt versucht, dir ein Coaching für mehrere tausend Euro „anzudrehen“. Wenn du nur kurz eine Frage hast – schreib einfach.
+        </div>
+
+        <div class="splitLine"></div>
+
+        <h2 style="margin-top:10px">Terminanfrage per E‑Mail</h2>
+        <p style="margin-top:0">Wenn du lieber schriftlich startest: kurz ausfüllen → wird an <b>kcfxtrading@gmail.com</b> gesendet.</p>
+
+        <form id="leadForm">
+          <label for="name">Name</label>
+          <input id="name" name="name" placeholder="Vorname" required />
+
+          <label for="email">E‑Mail</label>
+          <input id="email" name="email" type="email" placeholder="dein@email.de" required />
+
+          <label for="level">Dein Level</label>
+          <select id="level" name="level" required>
+            <option value="">Bitte wählen…</option>
+            <option>Anfänger (0–6 Monate)</option>
+            <option>Fortgeschritten (6–24 Monate)</option>
+            <option>Prop‑Aspirant (Evaluation/Challenge)</option>
+            <option>Bereits funded / aktiv</option>
+          </select>
+
+          <label for="goal">Wobei willst du Hilfe?</label>
+          <textarea id="goal" name="goal" placeholder="z.B. Setup finden, Entries filtern, Struktur/Plan, Fehlerdiagnose" required></textarea>
+
+          <label for="time">Zeitfenster</label>
+          <select id="time" name="time" required>
+            <option value="">Bitte wählen…</option>
+            <option>Heute / Morgen</option>
+            <option>Diese Woche</option>
+            <option>Nächste Woche</option>
+          </select>
+
+          <div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <button class="btn primary" type="submit" style="width:100%;justify-content:center">📩 Terminanfrage senden</button>
+            <span class="note">Antwort i.d.R. innerhalb von <b>24h</b></span>
+          </div>
+
+          <div class="splitLine"></div>
+          <div class="note">
+            <b>Hinweis:</b> Ich gebe keine Anlageberatung. Inhalte dienen Bildung/Analyse.
+          </div>
+        </form>
+      </aside>
+    </section>
+
+    <!-- Sections moved into the hero to remove the empty space next to the sticky card -->
+
+    <div class="footer">
+      <div class="splitLine"></div>
+      <div><b>Rechtliches:</b> Keine Anlageberatung. Keine Gewinngarantie. Bildung/Analyse. © <span id="year"></span></div>
+      <!-- Replace with your real imprint/privacy links if needed -->
+      <div style="margin-top:8px">Impressum · Datenschutz</div>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scroll for internal anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id.length>1){
+          const el = document.querySelector(id);
+          if(el){
+            e.preventDefault();
+            el.scrollIntoView({behavior:'smooth', block:'start'});
+            history.pushState(null,'',id);
+          }
+        }
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // WhatsApp deep link (pre-filled)
+    const waNumber = '491625774259';
+    const waText = encodeURIComponent('Hi Christoph! Ich komme von der Strategie-Call Seite. Meine Frage ist: ');
+    const waBtn = document.getElementById('waBtn');
+    if (waBtn) {
+      waBtn.href = `https://wa.me/${waNumber}?text=${waText}`;
+    }
+    // Profile image local preview + persist (so it doesn't disappear after changes/reload)
+    const input = document.getElementById('profileInput');
+    const preview = document.getElementById('profilePreview');
+    const fallback = document.getElementById('profileFallback');
+    const KEY = 'kcfx_profile_img_v1';
+
+    // Restore saved image on load
+    try {
+      const saved = localStorage.getItem(KEY);
+      if (saved && preview) {
+        preview.src = saved;
+        preview.style.display = 'block';
+        if (fallback) fallback.style.display = 'none';
+      }
+    } catch (e) {}
+
+    if (input) {
+      input.addEventListener('change', () => {
+        const file = input.files && input.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const dataUrl = e.target.result;
+          if (preview) {
+            preview.src = dataUrl;
+            preview.style.display = 'block';
+          }
+          if (fallback) fallback.style.display = 'none';
+          try { localStorage.setItem(KEY, dataUrl); } catch (err) {}
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // E-Mail submit → opens mailto with prefilled subject/body
+    const form = document.getElementById('leadForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      const subject = encodeURIComponent('Terminanfrage Strategie-Call');
+      const body = encodeURIComponent(
+        `Name: ${data.name}
+` +
+        `E-Mail: ${data.email}
+` +
+        `Level: ${data.level}
+` +
+        `Zeitfenster: ${data.time}
+
+` +
+        `Wobei willst du Hilfe?
+${data.goal}
+
+` +
+        `Hinweis: Keine Anlageberatung / keine Gewinngarantie.`
+      );
+
+      window.location.href = `mailto:kcfxtrading@gmail.com?subject=${subject}&body=${body}`;
+
+      form.innerHTML = `
+        <div style="padding:8px 2px">
+          <h2 style="margin:0 0 8px">E-Mail ist vorbereitet ✅</h2>
+          <p style="margin:0;color:var(--muted)">Dein Mail-Programm sollte sich öffnen. Wenn nicht: kopiere den Text oder schreib mir direkt auf WhatsApp.</p>
+          <div class="splitLine"></div>
+          <a class="btn primary" style="width:100%;justify-content:center" href="https://wa.me/${waNumber}?text=${encodeURIComponent('Hi Christoph! Ich möchte einen Termin anfragen. Mein Thema ist: ')}">✅ Direkt auf WhatsApp schreiben</a>
+          <div class="splitLine"></div>
+          <p style="margin:0;color:var(--muted);font-size:12px"><b>Hinweis:</b> Keine Anlageberatung. Bildung/Analyse. Kein Verkaufsgespräch.</p>
+        </div>`;
+    });
+  </script>
 </body>
 </html>
+
