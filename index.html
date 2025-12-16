@@ -1,124 +1,342 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kostenloser Strategie-Call | KC FX Trading</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kostenloser Strategie-Call | Struktur statt Raten</title>
+  <meta name="description" content="Kostenloser Strategie-Call: Wir prüfen dein Setup, deine Struktur und die nächsten Schritte – ohne Hype, ohne Versprechen." />
 
-<style>
-body{
-margin:0;
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-background:radial-gradient(900px 600px at 20% 0%,rgba(68,210,255,.18),transparent 55%),
-radial-gradient(900px 600px at 80% 10%,rgba(168,85,247,.16),transparent 60%),
-#070A12;
-color:#E9EEFF;
-}
-.wrap{max-width:1200px;margin:auto;padding:28px}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
-@media(max-width:900px){.hero{grid-template-columns:1fr}}
-.card{
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.12);
-border-radius:22px;
-padding:28px
-}
-h1{font-size:42px;margin:0 0 12px}
-h2{margin-top:24px}
-p{color:#A8B0C5}
-.badge{
-display:inline-block;padding:8px 14px;border-radius:999px;
-border:1px solid rgba(255,255,255,.15);margin:6px 6px 6px 0;font-size:13px
-}
-.btn{
-display:block;text-align:center;padding:14px;border-radius:14px;
-text-decoration:none;font-weight:700;margin-top:10px
-}
-.primary{background:linear-gradient(135deg,#44D2FF,#A855F7);color:#06101A}
-.dark{border:1px solid rgba(255,255,255,.15);color:#E9EEFF}
-.profile{display:flex;gap:14px;align-items:center;margin-bottom:18px}
-.profile img{
-width:140px;height:140px;border-radius:20px;
-object-fit:cover;border:1px solid rgba(255,255,255,.2)
-}
-input,textarea{
-width:100%;padding:12px;border-radius:12px;
-border:1px solid rgba(255,255,255,.15);
-background:rgba(0,0,0,.3);color:#E9EEFF;margin-bottom:10px
-}
-footer{text-align:center;color:#A8B0C5;font-size:12px;margin-top:40px}
-</style>
+  <style>
+    :root{
+      --bg:#070A12;
+      --card:#0D1224;
+      --muted:#A8B0C5;
+      --text:#E9EEFF;
+      --line:rgba(255,255,255,.10);
+      --accent:#44D2FF;
+      --accent2:#A855F7;
+      --ok:#22C55E;
+      --warn:#F59E0B;
+      --shadow:0 24px 70px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(1200px 800px at 20% 0%, rgba(68,210,255,.18), transparent 55%),
+                  radial-gradient(900px 600px at 80% 10%, rgba(168,85,247,.16), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.35;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logo{
+      width:36px;height:36px;border-radius:12px;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow: 0 12px 32px rgba(68,210,255,.18);
+    }
+    .brand b{letter-spacing:.3px}
+    .pill{border:1px solid var(--line);padding:10px 14px;border-radius:999px;color:var(--muted);text-decoration:none}
+
+    .hero{padding:46px 0 20px;display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
+    @media (max-width: 920px){.hero{grid-template-columns:1fr;}}
+
+    .h-card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.05), transparent 40%), var(--card);
+      border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);}
+    h1{margin:0 0 10px;font-size:42px;letter-spacing:-.5px;line-height:1.05}
+    @media (max-width:520px){h1{font-size:34px;}}
+    .sub{color:var(--muted);font-size:16px;margin:0 0 18px}
+
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+    .badge{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.03);padding:10px 12px;border-radius:999px;color:var(--muted);font-size:13px}
+    .dot{width:9px;height:9px;border-radius:999px;background:var(--ok)}
+    .dot.warn{background:var(--warn)}
+
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    .btn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      padding:12px 16px;
+      border-radius:14px;
+      text-decoration:none;
+      display:inline-flex;align-items:center;gap:10px;
+      cursor:pointer;
+      justify-content:center;
+    }
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, rgba(68,210,255,.95), rgba(168,85,247,.92));
+      box-shadow: 0 16px 40px rgba(68,210,255,.16);
+      color:#06101a;
+      font-weight:700;
+    }
+    .btn.primary:hover{filter:brightness(1.03)}
+    .btn:hover{border-color:rgba(255,255,255,.18)}
+
+    .formCard{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:var(--radius);padding:18px;position:sticky;top:18px}
+    @media (max-width: 920px){.formCard{position:relative;top:auto}}
+    .formCard h2{margin:4px 0 8px;font-size:18px}
+    .formCard p{margin:0 0 12px;color:var(--muted);font-size:13px}
+
+    label{display:block;font-size:12px;color:var(--muted);margin:10px 0 6px}
+    input, select, textarea{
+      width:100%;
+      background: rgba(0,0,0,.22);
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.12);
+      padding:11px 12px;
+      border-radius:14px;
+      outline:none;
+    }
+    textarea{min-height:92px;resize:vertical}
+    input:focus, select:focus, textarea:focus{border-color:rgba(68,210,255,.45)}
+
+    .note{font-size:12px;color:var(--muted);margin-top:10px}
+    .note b{color:#D9E6FF}
+
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width: 920px){.cols{grid-template-columns:1fr;}}
+
+    .card{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:18px;padding:18px}
+    .card h4{margin:0 0 8px;font-size:16px}
+    .card p, .card li{color:var(--muted);font-size:14px}
+    ul{margin:10px 0 0 18px}
+    ul li{margin:8px 0;line-height:1.35}
+
+    .faq details{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:16px;padding:14px;margin-bottom:10px}
+    .faq summary{cursor:pointer;font-weight:650}
+
+    .footer{padding:24px 0 44px;color:var(--muted);font-size:12px}
+    .splitLine{height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);margin:12px 0}
+    .tagline{color:rgba(233,238,255,.85);font-size:13px}
+
+    /* ---- FIX: Profilbild dauerhaft via Datei im Repo ---- */
+    .profileImg{
+      width:140px;height:140px;border-radius:20px;object-fit:cover;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      display:block;
+      flex: 0 0 auto;
+    }
+  </style>
 </head>
-
 <body>
 <div class="wrap">
-<div class="hero">
+  <div class="nav" id="top">
+    <a class="brand" href="#top" aria-label="Start">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <b>KC FX Trading</b>
+        <div class="tagline">Struktur statt Raten</div>
+      </div>
+    </a>
+    <a class="pill" href="#qualify">Zum Call</a>
+  </div>
 
-<!-- LINKS -->
-<div class="card">
-<h1>Kostenloser Strategie-Call<br>für strukturiertes Volumentrading</h1>
-<p>Wir prüfen in 15–20 Minuten, ob du ein klares Setup + Prozess hast. Kein Hype. Keine Versprechen. Nur Struktur.</p>
+  <section class="hero">
+    <div class="h-card">
+      <h1>Kostenloser Strategie-Call<br/>für strukturiertes Volumentrading</h1>
+      <p class="sub">Wir prüfen in 15–20 Minuten, ob du ein klares Setup + Prozess hast (oder was als nächstes fehlt). Kein Hype, keine Versprechen – nur Struktur.</p>
 
-<div class="badge">Footprint</div>
-<div class="badge">Volume Profile</div>
-<div class="badge">Marktstruktur</div>
-<div class="badge">Für Einsteiger & Prop-Aspirants</div>
-<div class="badge">Nicht für „schnell reich“</div>
+      <div class="badges">
+        <div class="badge"><span class="dot"></span> Fokus: Footprint · Volume Profile · Marktstruktur</div>
+        <div class="badge"><span class="dot"></span> Für Einsteiger & Prop-Aspirants (seriös)</div>
+        <div class="badge"><span class="dot warn"></span> Nicht für „schnell reich“</div>
+      </div>
 
-<a class="btn primary" href="#kontakt">Kostenlosen Call anfragen</a>
+      <p class="note" style="margin-top:6px">Im Call sprechen wir u. a. über: geeignete Märkte · Einstieg mit Volumen/Footprint · sinnvolle Einsteiger-Strategie · notwendige Tools · realistisches Kapital & Risiko · Prop-Firm-Evaluations.</p>
 
-<h2>Warum ich?</h2>
-<ul>
-<li>Daytrader seit 2013</li>
-<li>10+ Jahre Volumen & Orderflow</li>
-<li>1.000+ Trader begleitet</li>
-<li>Dutzende erfolgreich in Prop-Firms</li>
-<li>Teilnahmen an Trading-Wettbewerben</li>
-</ul>
+      <div class="ctaRow" style="margin-bottom:16px">
+        <a class="btn primary" id="callBtn" href="#qualify">Kostenlosen Call anfragen</a>
+        <a class="btn" href="#proof">Warum ich?</a>
+        <a class="btn" href="#faq">FAQ</a>
+      </div>
 
-<h2>Was wir im Call klären</h2>
-<ul>
-<li>Welche Märkte sinnvoll sind (und welche nicht)</li>
-<li>Sauberer Einstieg mit Volumen & Footprint</li>
-<li>Sinnvolle Einsteiger-Strategie</li>
-<li>Welche Tools du wirklich brauchst</li>
-<li>Realistisches Kapital & Risiko</li>
-<li>Prop-Firm Tests & typische Fehler</li>
-</ul>
+      <div class="cols" style="margin-top:16px" id="proof">
+        <div class="card">
+          <h4>Warum ich?</h4>
+          <ul>
+            <li><b>Daytrader seit 2013</b> – Fokus auf strukturierte Entscheidungsprozesse</li>
+            <li><b>10+ Jahre</b> Volumen-/Orderflow-Trading (Footprint & Volume Profile)</li>
+            <li><b>1.000+ Trader</b> begleitet (Einsteiger bis Prop-Aspirants)</li>
+            <li><b>Dutzende</b> in Prop-Firm-Strukturen positioniert</li>
+            <li><b>Trading-Wettbewerbe:</b> erfolgreiche Teilnahmen an mehreren Wettbewerben</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>Was wir im Call klären</h4>
+          <ul>
+            <li><b>Märkte & Instrumente:</b> was sinnvoll ist – und womit du <u>nicht</u> startest</li>
+            <li><b>Volumen & Footprint:</b> sauberer Einstieg ohne Indikator-Overkill</li>
+            <li><b>Einsteiger-Strategie:</b> einfache, testbare Struktur statt Chaos</li>
+            <li><b>Tools & Setup:</b> was du wirklich brauchst (und was nicht)</li>
+            <li><b>Kapital & Risiko:</b> realistische Größen & typische Denkfehler</li>
+            <li><b>Prop-Firm-Evaluations:</b> Ablauf, Regeln & häufige Fehler</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px" id="faq">
+        <h4>FAQ</h4>
+        <div class="faq" style="margin-top:10px">
+          <details>
+            <summary>Ist der Call wirklich kostenlos?</summary>
+            <p>Ja. Du bekommst eine klare Diagnose und nächste Schritte. Keine Signale, kein Druck.</p>
+          </details>
+          <details>
+            <summary>Versuchst du mir ein teures Coaching zu verkaufen?</summary>
+            <p>Nein. Kein Coaching-Pitch, kein „Mehrere-Tausend-Euro“-Gespräch. Wenn du nur eine Frage hast: WhatsApp reicht.</p>
+          </details>
+          <details>
+            <summary>Gibst du Anlageberatung oder Gewinnversprechen?</summary>
+            <p>Nein. Keine Anlageberatung, keine Gewinngarantie. Bildung/Analyse & Struktur.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <aside class="formCard" id="qualify">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <!-- ✅ EINZIGE ÄNDERUNG: festes Bild aus Repo -->
+        <img
+          class="profileImg"
+          src="christoph.jpeg"
+          alt="Christoph Krämer – Daytrader"
+          onerror="this.onerror=null; this.src='christoph.jpg';"
+        />
+        <div>
+          <div style="font-weight:700">Christoph Krämer</div>
+          <div style="font-size:12px;color:var(--muted)">Daytrader seit 2013 · Volumen & Orderflow</div>
+        </div>
+      </div>
+
+      <h2>Direkt zu Christoph</h2>
+      <p>Kein Funnel-Quatsch: Du kannst mir sofort auf WhatsApp schreiben. Darunter findest du den Crashkurs und Instagram. Optional kannst du mir auch eine Terminanfrage per E-Mail senden.</p>
+
+      <div style="display:flex;flex-direction:column;gap:10px;margin:10px 0 12px">
+        <a class="btn primary" style="width:100%" id="waBtn" href="#">✅ Jetzt direkt mit Christoph schreiben (WhatsApp)</a>
+        <div class="note" style="margin-top:6px;text-align:center">Kein Verkauf · Kein Coaching-Pitch · Kein Zeitdruck</div>
+        <a class="btn" style="width:100%" href="https://m.me/229416091094064?ref=w47333678" target="_blank" rel="noopener">🎁 Kostenloser Crashkurs (Messenger)</a>
+        <a class="btn" style="width:100%" href="https://www.instagram.com/volumetraderchris/" target="_blank" rel="noopener">📷 Instagram: @volumetraderchris</a>
+      </div>
+
+      <div class="splitLine"></div>
+
+      <div class="note">
+        <b>Wichtig:</b> Kein Verkaufsgespräch. Es wird zu keinem Zeitpunkt versucht, dir ein Coaching für mehrere tausend Euro „anzudrehen“. Wenn du nur kurz eine Frage hast – schreib einfach.
+      </div>
+
+      <div class="splitLine"></div>
+
+      <h2 style="margin-top:10px">Terminanfrage per E-Mail</h2>
+      <p style="margin-top:0">Wenn du lieber schriftlich startest: kurz ausfüllen → wird an <b>kcfxtrading@gmail.com</b> gesendet.</p>
+
+      <form id="leadForm">
+        <label for="name">Name</label>
+        <input id="name" name="name" placeholder="Vorname" required />
+
+        <label for="email">E-Mail</label>
+        <input id="email" name="email" type="email" placeholder="dein@email.de" required />
+
+        <label for="level">Dein Level</label>
+        <select id="level" name="level" required>
+          <option value="">Bitte wählen…</option>
+          <option>Anfänger (0–6 Monate)</option>
+          <option>Fortgeschritten (6–24 Monate)</option>
+          <option>Prop-Aspirant (Evaluation/Challenge)</option>
+          <option>Bereits funded / aktiv</option>
+        </select>
+
+        <label for="goal">Wobei willst du Hilfe?</label>
+        <textarea id="goal" name="goal" placeholder="z.B. Setup finden, Entries filtern, Struktur/Plan, Fehlerdiagnose" required></textarea>
+
+        <label for="time">Zeitfenster</label>
+        <select id="time" name="time" required>
+          <option value="">Bitte wählen…</option>
+          <option>Heute / Morgen</option>
+          <option>Diese Woche</option>
+          <option>Nächste Woche</option>
+        </select>
+
+        <div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+          <button class="btn primary" type="submit" style="width:100%">📩 Terminanfrage senden</button>
+          <span class="note">Antwort i.d.R. innerhalb von <b>24h</b></span>
+        </div>
+
+        <div class="splitLine"></div>
+        <div class="note">
+          <b>Hinweis:</b> Ich gebe keine Anlageberatung. Inhalte dienen Bildung/Analyse.
+        </div>
+      </form>
+    </aside>
+  </section>
+
+  <div class="footer">
+    <div class="splitLine"></div>
+    <div><b>Rechtliches:</b> Keine Anlageberatung. Keine Gewinngarantie. Bildung/Analyse. © <span id="year"></span></div>
+    <div style="margin-top:8px">Impressum · Datenschutz</div>
+  </div>
 </div>
 
-<!-- RECHTS -->
-<div class="card" id="kontakt">
-<div class="profile">
-<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...(BASE64_BILD_DRIN)" alt="Christoph Krämer">
-<div>
-<b>Christoph Krämer</b><br>
-<span style="color:#A8B0C5;font-size:13px">Daytrader seit 2013 · Volumen & Orderflow</span>
-</div>
-</div>
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-<p>Du kannst mir direkt auf WhatsApp schreiben. Kein Funnel. Kein Verkauf. Kein Pitch.</p>
+  // WhatsApp deep link (pre-filled)
+  const waNumber = '491625774259';
+  const waText = encodeURIComponent('Hi Christoph! Ich komme von der Strategie-Call Seite. Meine Frage ist: ');
+  const waBtn = document.getElementById('waBtn');
+  if (waBtn) waBtn.href = `https://wa.me/${waNumber}?text=${waText}`;
 
-<a class="btn primary" href="https://wa.me/491625774259">Jetzt direkt schreiben (WhatsApp)</a>
-<a class="btn dark" href="https://m.me/229416091094064?ref=w47333678">🎁 Kostenloser Crashkurs (Messenger)</a>
-<a class="btn dark" href="https://www.instagram.com/volumetraderchris/">📷 Instagram @volumetraderchris</a>
+  // Smooth scroll + Fokus aufs Formular, aber WhatsApp bleibt sichtbar (kein hartes Sprung-Down)
+  const callBtn = document.getElementById('callBtn');
+  if (callBtn) {
+    callBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const qualify = document.getElementById('qualify');
+      if (qualify) qualify.scrollIntoView({behavior:'smooth', block:'start'});
+      setTimeout(() => {
+        const name = document.getElementById('name');
+        if (name) name.focus({preventScroll:true});
+      }, 450);
+    });
+  }
 
-<h2>Terminanfrage per E-Mail</h2>
-<form action="mailto:kcfxtrading@gmail.com" method="post" enctype="text/plain">
-<input type="text" name="Name" placeholder="Dein Name">
-<input type="email" name="Email" placeholder="Deine E-Mail">
-<textarea name="Thema" placeholder="Wobei brauchst du Hilfe?"></textarea>
-<button class="btn primary" type="submit">📩 Terminanfrage senden</button>
-</form>
+  // E-Mail submit → opens mailto with prefilled subject/body
+  const form = document.getElementById('leadForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
 
-<p style="font-size:12px;color:#A8B0C5">
-Kein Verkauf · Keine Anlageberatung · Keine Gewinngarantie
-</p>
-</div>
+    const subject = encodeURIComponent('Terminanfrage Strategie-Call');
+    const body = encodeURIComponent(
+      `Name: ${data.name}\n` +
+      `E-Mail: ${data.email}\n` +
+      `Level: ${data.level}\n` +
+      `Zeitfenster: ${data.time}\n\n` +
+      `Wobei willst du Hilfe?\n${data.goal}\n\n` +
+      `Hinweis: Keine Anlageberatung / keine Gewinngarantie.`
+    );
 
-</div>
-<footer>© 2025 · Bildung & Analyse · Keine Anlageberatung</footer>
-</div>
+    window.location.href = `mailto:kcfxtrading@gmail.com?subject=${subject}&body=${body}`;
+
+    form.innerHTML = `
+      <div style="padding:8px 2px">
+        <h2 style="margin:0 0 8px">E-Mail ist vorbereitet ✅</h2>
+        <p style="margin:0;color:var(--muted)">Dein Mail-Programm sollte sich öffnen. Wenn nicht: schreib mir direkt auf WhatsApp.</p>
+        <div class="splitLine"></div>
+        <a class="btn primary" style="width:100%" href="https://wa.me/${waNumber}?text=${encodeURIComponent('Hi Christoph! Ich möchte einen Termin anfragen. Mein Thema ist: ')}">✅ Direkt auf WhatsApp schreiben</a>
+        <div class="splitLine"></div>
+        <p style="margin:0;color:var(--muted);font-size:12px"><b>Hinweis:</b> Keine Anlageberatung. Bildung/Analyse. Kein Verkaufsgespräch.</p>
+      </div>`;
+  });
+</script>
 </body>
 </html>
 
