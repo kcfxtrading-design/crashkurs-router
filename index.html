@@ -14,69 +14,39 @@ radial-gradient(900px 600px at 80% 10%,rgba(168,85,247,.16),transparent 60%),
 #070A12;
 color:#E9EEFF;
 }
-
-.wrap{max-width:1200px;margin:auto;padding:28px;}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;}
+.wrap{max-width:1200px;margin:auto;padding:28px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
 @media(max-width:900px){.hero{grid-template-columns:1fr}}
-
 .card{
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.12);
 border-radius:22px;
-padding:28px;
+padding:28px
 }
-
 h1{font-size:42px;margin:0 0 12px}
-h2{margin-top:0}
+h2{margin-top:24px}
 p{color:#A8B0C5}
-
 .badge{
-display:inline-block;
-padding:8px 14px;
-border-radius:999px;
-border:1px solid rgba(255,255,255,.15);
-margin:6px 6px 6px 0;
-font-size:13px;
+display:inline-block;padding:8px 14px;border-radius:999px;
+border:1px solid rgba(255,255,255,.15);margin:6px 6px 6px 0;font-size:13px
 }
-
 .btn{
-display:block;
-text-align:center;
-padding:14px;
-border-radius:14px;
-text-decoration:none;
-font-weight:700;
-margin-top:10px;
+display:block;text-align:center;padding:14px;border-radius:14px;
+text-decoration:none;font-weight:700;margin-top:10px
 }
-
-.primary{
-background:linear-gradient(135deg,#44D2FF,#A855F7);
-color:#06101A;
-}
-
-.dark{
-border:1px solid rgba(255,255,255,.15);
-color:#E9EEFF;
-}
-
-.profile{
-display:flex;
-gap:14px;
-align-items:center;
-margin-bottom:18px;
-}
-
+.primary{background:linear-gradient(135deg,#44D2FF,#A855F7);color:#06101A}
+.dark{border:1px solid rgba(255,255,255,.15);color:#E9EEFF}
+.profile{display:flex;gap:14px;align-items:center;margin-bottom:18px}
 .profile img{
-width:140px;
-height:140px;
-border-radius:20px;
-object-fit:cover;
-border:1px solid rgba(255,255,255,.2);
+width:140px;height:140px;border-radius:20px;
+object-fit:cover;border:1px solid rgba(255,255,255,.2)
 }
-
-ul{margin-left:18px}
-li{margin:8px 0;color:#A8B0C5}
-footer{margin-top:40px;text-align:center;color:#A8B0C5;font-size:12px}
+input,textarea{
+width:100%;padding:12px;border-radius:12px;
+border:1px solid rgba(255,255,255,.15);
+background:rgba(0,0,0,.3);color:#E9EEFF;margin-bottom:10px
+}
+footer{text-align:center;color:#A8B0C5;font-size:12px;margin-top:40px}
 </style>
 </head>
 
@@ -84,7 +54,7 @@ footer{margin-top:40px;text-align:center;color:#A8B0C5;font-size:12px}
 <div class="wrap">
 <div class="hero">
 
-<!-- LEFT -->
+<!-- LINKS -->
 <div class="card">
 <h1>Kostenloser Strategie-Call<br>für strukturiertes Volumentrading</h1>
 <p>Wir prüfen in 15–20 Minuten, ob du ein klares Setup + Prozess hast. Kein Hype. Keine Versprechen. Nur Struktur.</p>
@@ -112,15 +82,15 @@ footer{margin-top:40px;text-align:center;color:#A8B0C5;font-size:12px}
 <li>Sauberer Einstieg mit Volumen & Footprint</li>
 <li>Sinnvolle Einsteiger-Strategie</li>
 <li>Welche Tools du wirklich brauchst</li>
-<li>Realistisches Kapital & Risikomanagement</li>
-<li>Wie Prop-Firm Tests funktionieren & wo die meisten scheitern</li>
+<li>Realistisches Kapital & Risiko</li>
+<li>Prop-Firm Tests & typische Fehler</li>
 </ul>
 </div>
 
-<!-- RIGHT -->
+<!-- RECHTS -->
 <div class="card" id="kontakt">
 <div class="profile">
-<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...[GEKÜRZT_ABER_VOLLSTÄNDIG_BEI_DIR_EINSETZEN]" alt="Christoph Krämer">
+<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...(BASE64_BILD_DRIN)" alt="Christoph Krämer">
 <div>
 <b>Christoph Krämer</b><br>
 <span style="color:#A8B0C5;font-size:13px">Daytrader seit 2013 · Volumen & Orderflow</span>
@@ -133,20 +103,24 @@ footer{margin-top:40px;text-align:center;color:#A8B0C5;font-size:12px}
 <a class="btn dark" href="https://m.me/229416091094064?ref=w47333678">🎁 Kostenloser Crashkurs (Messenger)</a>
 <a class="btn dark" href="https://www.instagram.com/volumetraderchris/">📷 Instagram @volumetraderchris</a>
 
-<p style="font-size:12px;margin-top:14px;color:#A8B0C5">
-Kein Verkaufsgespräch · Keine Anlageberatung · Keine Gewinngarantie
+<h2>Terminanfrage per E-Mail</h2>
+<form action="mailto:kcfxtrading@gmail.com" method="post" enctype="text/plain">
+<input type="text" name="Name" placeholder="Dein Name">
+<input type="email" name="Email" placeholder="Deine E-Mail">
+<textarea name="Thema" placeholder="Wobei brauchst du Hilfe?"></textarea>
+<button class="btn primary" type="submit">📩 Terminanfrage senden</button>
+</form>
+
+<p style="font-size:12px;color:#A8B0C5">
+Kein Verkauf · Keine Anlageberatung · Keine Gewinngarantie
 </p>
 </div>
 
 </div>
-
-<footer>
-© 2025 · Bildung & Analyse · Keine Anlageberatung
-</footer>
+<footer>© 2025 · Bildung & Analyse · Keine Anlageberatung</footer>
 </div>
 </body>
 </html>
 
-</html>
 
 
